@@ -1,0 +1,1813 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shiny — Nettoyage Exterieur Haute Pression | Narbonne</title>
+<meta name="description" content="Shiny, nettoyage exterieur haute pression a Narbonne. Terrasses, facades, murs, allees. Devis gratuit, resultat garanti. 5/5 Google.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="images/sale.webp">
+<link rel="preload" as="image" href="images/propre.webp">
+<link rel="icon" type="image/png" href="images/pupu.png">
+<meta property="og:title" content="Shiny — Nettoyage Exterieur Haute Pression | Narbonne">
+<meta property="og:description" content="Nettoyage exterieur haute pression a Narbonne. Terrasses, facades, murs, allees. Devis gratuit, resultat garanti.">
+<meta property="og:image" content="images/propre.webp">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+/* ================================================================
+   SHINY — Soft Structuralism + Asymmetrical Bento
+   DESIGN_VARIANCE: 8 | MOTION_INTENSITY: 6 | VISUAL_DENSITY: 4
+   Vibe: $150k agency / Awwwards-tier
+   ================================================================ */
+
+:root {
+  --accent: #06b6d4;
+  --accent-light: #22d3ee;
+  --accent-dark: #0891b2;
+  --accent-surface: rgba(8,145,178,0.06);
+  --accent-border: rgba(8,145,178,0.12);
+  --accent-glow: 0 8px 40px -8px rgba(8,145,178,0.3);
+
+  --bg: #f8f9fb;
+  --surface: #ffffff;
+  --surface-raised: #ffffff;
+  --surface-dim: #f1f3f6;
+
+  --ink: #0f172a;
+  --ink-secondary: #475569;
+  --ink-tertiary: #94a3b8;
+  --ink-ghost: #cbd5e1;
+
+  --border: rgba(15,23,42,0.05);
+  --border-strong: rgba(15,23,42,0.08);
+
+  --shadow-ambient: 0 1px 2px rgba(15,23,42,0.03);
+  --shadow-soft: 0 4px 20px -4px rgba(15,23,42,0.06);
+  --shadow-lifted: 0 20px 60px -15px rgba(15,23,42,0.08);
+  --shadow-dramatic: 0 32px 80px -20px rgba(15,23,42,0.12);
+
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
+  --radius-xl: 2rem;
+  --radius-shell: 2.25rem;
+
+  --font: 'Outfit', system-ui, sans-serif;
+  --ease-out: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration: 700ms;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Grain overlay — fixed, pointer-events-none */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.018;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+}
+
+.wrap { max-width: 1280px; margin: 0 auto; padding: 0 28px; }
+
+/* ================================================================
+   SCROLL REVEAL — blur + translate (soft-skill Section 5C)
+   ================================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  filter: blur(6px);
+  transition: opacity var(--duration) var(--ease-spring),
+              transform var(--duration) var(--ease-spring),
+              filter var(--duration) var(--ease-spring);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+.stagger > .reveal:nth-child(1) { transition-delay: 0ms; }
+.stagger > .reveal:nth-child(2) { transition-delay: 80ms; }
+.stagger > .reveal:nth-child(3) { transition-delay: 160ms; }
+.stagger > .reveal:nth-child(4) { transition-delay: 240ms; }
+.stagger > .reveal:nth-child(5) { transition-delay: 320ms; }
+.stagger > .reveal:nth-child(6) { transition-delay: 400ms; }
+
+/* ================================================================
+   DOUBLE-BEZEL MIXIN (soft-skill Section 4A)
+   Outer Shell + Inner Core = physical machined hardware look
+   ================================================================ */
+.bezel {
+  background: rgba(15,23,42,0.025);
+  border: 1px solid var(--border);
+  padding: 6px;
+  border-radius: var(--radius-shell);
+}
+.bezel-inner {
+  background: var(--surface);
+  border-radius: calc(var(--radius-shell) - 6px);
+  box-shadow: inset 0 1px 1px rgba(255,255,255,0.6),
+              var(--shadow-soft);
+  overflow: hidden;
+}
+
+/* ================================================================
+   NAVBAR — Floating glass pill (soft-skill Section 5A)
+   ================================================================ */
+.nav {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  background: rgba(255,255,255,0.78);
+  backdrop-filter: blur(24px) saturate(1.8);
+  -webkit-backdrop-filter: blur(24px) saturate(1.8);
+  border: 1px solid rgba(255,255,255,0.5);
+  box-shadow: 0 4px 30px -6px rgba(15,23,42,0.08), inset 0 1px 0 rgba(255,255,255,0.5);
+  border-radius: 100px;
+  padding: 6px 6px 6px 24px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  transition: all 0.6s var(--ease-out);
+}
+.nav.scrolled {
+  background: rgba(255,255,255,0.92);
+  box-shadow: 0 8px 40px -8px rgba(15,23,42,0.1), inset 0 1px 0 rgba(255,255,255,0.6);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: -0.5px;
+  color: var(--accent-dark);
+}
+.nav-logo img { width: 28px; height: 28px; object-fit: contain; mix-blend-mode: multiply; }
+
+.nav-links { display: flex; gap: 20px; list-style: none; }
+.nav-links a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-secondary);
+  text-decoration: none;
+  padding: 4px 0;
+  position: relative;
+  transition: color 0.4s var(--ease-out);
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: width 0.4s var(--ease-spring);
+}
+.nav-links a:hover { color: var(--accent-dark); }
+.nav-links a:hover::after { width: 100%; }
+
+/* Button-in-Button CTA (soft-skill Section 4B) */
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--accent);
+  color: #fff;
+  padding: 6px 6px 6px 20px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.5s var(--ease-spring);
+  box-shadow: var(--accent-glow);
+}
+.nav-cta:hover { background: var(--accent-dark); transform: translateY(-1px); }
+.nav-cta:active { transform: scale(0.97); }
+.nav-cta .cta-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s var(--ease-spring);
+}
+.nav-cta:hover .cta-icon { background: rgba(255,255,255,0.3); transform: translateX(2px); }
+.nav-cta .cta-icon svg { width: 14px; height: 14px; stroke: #fff; fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Hamburger */
+.burger { display: none; background: none; border: none; cursor: pointer; padding: 8px; flex-direction: column; gap: 5px; }
+.burger span { display: block; width: 20px; height: 1.5px; background: var(--ink); border-radius: 4px; transition: all 0.5s var(--ease-spring); transform-origin: center; }
+.burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.burger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* Mobile overlay */
+.mobile-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(40px);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+.mobile-overlay.open { display: flex; }
+.mobile-overlay a {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: all 0.5s var(--ease-spring);
+}
+.mobile-overlay.open a { opacity: 1; transform: translateY(0); }
+.mobile-overlay.open a:nth-child(1) { transition-delay: 80ms; }
+.mobile-overlay.open a:nth-child(2) { transition-delay: 130ms; }
+.mobile-overlay.open a:nth-child(3) { transition-delay: 180ms; }
+.mobile-overlay.open a:nth-child(4) { transition-delay: 230ms; }
+.mobile-overlay.open a:nth-child(5) { transition-delay: 280ms; }
+
+/* ================================================================
+   HERO — Scroll Expansion (image expands on scroll)
+   Adapted from scroll-expansion-hero React component
+   ================================================================ */
+.hero-expansion {
+  position: relative;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.hero-expansion.locked { overflow: hidden; }
+
+/* Background image (fades as scroll progresses) */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  transition: opacity 0.15s ease;
+}
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(15,23,42,0.10);
+}
+
+/* Expanding media container */
+.hero-media {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 0 60px rgba(0,0,0,0.25);
+  transition: border-radius 0.3s var(--ease-out);
+  will-change: width, height, border-radius;
+}
+.hero-media.full { border-radius: 0; }
+.hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  position: absolute;
+  inset: 0;
+}
+.hero-img-sale { z-index: 0; }
+.hero-img-propre {
+  z-index: 1;
+  clip-path: inset(100% 0 0 0);
+  transition: none;
+  will-change: clip-path;
+}
+
+/* Overlay on media that fades as it expands */
+.hero-media-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15,23,42,0.35);
+  border-radius: inherit;
+  transition: opacity 0.2s ease;
+  z-index: 3;
+}
+
+/* Title text that splits on scroll */
+.hero-titles {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  pointer-events: none;
+  width: 100%;
+}
+.hero-title-line {
+  font-family: var(--font);
+  font-size: clamp(2.6rem, 6vw, 5rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  color: #fff;
+  white-space: nowrap;
+  text-shadow: 0 2px 30px rgba(0,0,0,0.3);
+  transition: none;
+}
+
+/* Scroll indicator */
+.hero-scroll-hint {
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transition: opacity 0.5s var(--ease-out);
+}
+.hero-scroll-hint span {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.hero-scroll-arrow {
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: none;
+  animation: scrollBounce 2s var(--ease-spring) infinite;
+}
+.hero-scroll-arrow svg { stroke: rgba(255,255,255,0.6); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+/* Post-expand content: CTA bar that fades in after full expansion */
+.hero-cta-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 28px 28px 36px;
+  background: linear-gradient(to top, rgba(15,23,42,0.7) 0%, transparent 100%);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s var(--ease-spring), transform 0.7s var(--ease-spring);
+  pointer-events: none;
+  flex-wrap: wrap;
+}
+.hero-cta-bar.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Primary CTA — Button-in-Button */
+.btn-main {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 8px 8px 28px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 100px;
+  font-family: var(--font);
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.5s var(--ease-spring);
+  box-shadow: var(--accent-glow);
+}
+.btn-main:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 14px 50px -10px rgba(8,145,178,0.35); }
+.btn-main:active { transform: translateY(0) scale(0.98); }
+.btn-main .btn-arrow {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.4s var(--ease-spring);
+}
+.btn-main:hover .btn-arrow { background: rgba(255,255,255,0.3); transform: translateX(3px); }
+.btn-main .btn-arrow svg { width: 16px; height: 16px; stroke: #fff; fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 24px;
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 100px;
+  font-family: var(--font);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.5s var(--ease-spring);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.btn-ghost:hover { background: rgba(255,255,255,0.2); border-color: rgba(255,255,255,0.4); transform: translateY(-2px); }
+.btn-ghost svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Eyebrow pill floating on hero */
+.hero-eyebrow-float {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 7;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px 6px 12px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.85);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.hero-eyebrow-float .dot {
+  width: 6px; height: 6px;
+  background: var(--accent-light);
+  border-radius: 50%;
+  animation: breathe 2.5s ease-in-out infinite;
+}
+@keyframes breathe {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.5); }
+}
+
+/* Proof badge floating — now glass style for dark hero */
+.proof-float-hero {
+  position: absolute;
+  bottom: 90px;
+  right: 32px;
+  z-index: 7;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  animation: float-proof 4s ease-in-out infinite;
+  opacity: 0;
+  transition: opacity 0.6s var(--ease-out);
+}
+.proof-float-hero.visible { opacity: 1; }
+.proof-float-hero .stars { color: #fbbf24; font-size: 15px; letter-spacing: 1px; line-height: 1; }
+.proof-float-hero .proof-text { font-size: 13px; font-weight: 600; color: #fff; line-height: 1.3; }
+.proof-float-hero .proof-text span { display: block; font-weight: 400; color: rgba(255,255,255,0.6); font-size: 11px; }
+@keyframes float-proof { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+
+/* ================================================================
+   TRUST STRIP
+   ================================================================ */
+.trust-strip {
+  padding: 36px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  text-align: center;
+}
+.trust-grid .val { font-size: 22px; font-weight: 800; color: var(--accent-dark); letter-spacing: -0.5px; }
+.trust-grid .lbl { font-size: 13px; font-weight: 500; color: var(--ink-tertiary); margin-top: 2px; }
+
+/* ================================================================
+   SECTION HEADERS — Eyebrow tag pattern (soft-skill 4C)
+   ================================================================ */
+.sec-head { max-width: 520px; margin-bottom: 64px; }
+.sec-tag {
+  display: inline-flex;
+  padding: 4px 12px;
+  background: var(--accent-surface);
+  border: 1px solid var(--accent-border);
+  border-radius: 100px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--accent-dark);
+  margin-bottom: 16px;
+}
+.sec-head h2 {
+  font-size: clamp(1.7rem, 3.2vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.12;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+.sec-head p { font-size: 16px; color: var(--ink-secondary); line-height: 1.7; max-width: 50ch; }
+
+/* ================================================================
+   AVANT / APRES — Photo Gallery (scattered, draggable)
+   ================================================================ */
+.ba { padding: 120px 0 140px; }
+
+.ba-gallery {
+  position: relative;
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.ba-photo {
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lifted);
+  cursor: grab;
+  transition: transform 0.5s var(--ease-spring), box-shadow 0.5s var(--ease-spring);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+  will-change: transform;
+}
+.ba-photo:hover {
+  width: 380px !important;
+  height: 380px !important;
+  box-shadow: var(--shadow-dramatic);
+  z-index: 50 !important;
+  transition: width 0.5s var(--ease-spring), height 0.5s var(--ease-spring), transform 0.5s var(--ease-spring), box-shadow 0.5s var(--ease-spring) !important;
+}
+.ba-photo:active {
+  cursor: grabbing;
+  z-index: 100 !important;
+}
+.ba-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* ================================================================
+   SERVICES — Asymmetric Bento (2fr 1fr 1fr / 1fr 1fr 2fr zigzag)
+   (taste-skill: NO 3-equal cards)
+   ================================================================ */
+.svc { padding: 120px 0 140px; background: var(--surface); }
+.svc-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 16px;
+}
+.svc-grid > :nth-child(4) { grid-column: 1; }
+.svc-grid > :nth-child(5) { grid-column: 2; }
+.svc-grid > :nth-child(6) { grid-column: 3; }
+
+.svc-card {
+  padding: 36px 28px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  transition: all 0.5s var(--ease-spring);
+  position: relative;
+}
+.svc-card:hover {
+  background: var(--surface);
+  border-color: var(--accent-border);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lifted);
+}
+.svc-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 24px; right: 24px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-border), transparent);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.svc-card:hover::before { opacity: 1; }
+
+.svc-icon {
+  width: 48px; height: 48px;
+  border-radius: 14px;
+  background: var(--accent-surface);
+  border: 1px solid var(--accent-border);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px;
+}
+.svc-icon svg { width: 22px; height: 22px; stroke: var(--accent); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+
+.svc-card h3 { font-size: 17px; font-weight: 700; color: var(--ink); margin-bottom: 6px; letter-spacing: -0.2px; }
+.svc-card p { font-size: 14px; color: var(--ink-secondary); line-height: 1.65; }
+
+
+/* ================================================================
+   WHY SHINY — Editorial Split + Stat Cards
+   ================================================================ */
+.why { padding: 120px 0 140px; }
+.why-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 64px;
+  align-items: start;
+}
+.why-list { display: flex; flex-direction: column; gap: 28px; }
+
+.why-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 20px;
+  border-radius: var(--radius-md);
+  transition: all 0.4s var(--ease-spring);
+}
+.why-item:hover { background: var(--surface); box-shadow: var(--shadow-soft); }
+
+.why-ico {
+  flex-shrink: 0;
+  width: 44px; height: 44px;
+  border-radius: 13px;
+  background: var(--accent-surface);
+  border: 1px solid var(--accent-border);
+  display: flex; align-items: center; justify-content: center;
+}
+.why-ico svg { width: 20px; height: 20px; stroke: var(--accent); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+
+.why-item h3 { font-size: 16px; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+.why-item p { font-size: 14px; color: var(--ink-secondary); line-height: 1.6; }
+
+.why-stats { display: flex; flex-direction: column; gap: 16px; position: sticky; top: 100px; }
+.stat-block {
+  padding: 32px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  box-shadow: var(--shadow-ambient);
+  transition: all 0.5s var(--ease-spring);
+}
+.stat-block:hover { transform: translateY(-3px); box-shadow: var(--shadow-lifted); }
+.stat-block .big { font-size: 48px; font-weight: 900; color: var(--accent-dark); line-height: 1; letter-spacing: -2px; }
+.stat-block .sub { font-size: 14px; color: var(--ink-tertiary); margin-top: 6px; font-weight: 500; }
+
+/* ================================================================
+   REVIEWS
+   ================================================================ */
+.rev { padding: 120px 0 140px; background: var(--surface); }
+.rev-card {
+  padding: 32px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  max-width: 640px;
+}
+.rev-stars { display: flex; gap: 3px; margin-bottom: 16px; }
+.rev-stars svg { width: 18px; height: 18px; fill: #f59e0b; }
+.rev-text { font-size: 16px; color: var(--ink); line-height: 1.75; margin-bottom: 16px; font-style: italic; }
+.rev-author { font-size: 14px; color: var(--ink-tertiary); }
+.rev-author strong { color: var(--ink); font-weight: 700; }
+
+.g-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 22px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  margin-top: 28px;
+  box-shadow: var(--shadow-ambient);
+}
+.g-badge .g-num { font-size: 32px; font-weight: 900; color: var(--accent-dark); letter-spacing: -1px; }
+.g-badge .g-info { font-size: 13px; color: var(--ink-tertiary); line-height: 1.3; }
+.g-badge .g-info strong { color: var(--ink); display: block; }
+
+/* ================================================================
+   ZONE
+   ================================================================ */
+.zone { padding: 120px 0; }
+.zone-box {
+  padding: 48px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  box-shadow: var(--shadow-soft);
+}
+.zone-box h3 { font-size: 24px; font-weight: 800; color: var(--ink); margin-bottom: 12px; letter-spacing: -0.3px; }
+.zone-box p { font-size: 15px; color: var(--ink-secondary); line-height: 1.7; margin-bottom: 18px; }
+.zone-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+.zone-pill {
+  padding: 5px 14px;
+  background: var(--accent-surface);
+  border: 1px solid var(--accent-border);
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent-dark);
+}
+.zone-map { width: 100%; height: 320px; border-radius: var(--radius-md); border: 1px solid var(--border); overflow: hidden; box-shadow: var(--shadow-ambient); }
+.zone-map iframe { width: 100%; height: 100%; border: 0; }
+
+/* ================================================================
+   FORM — Double-Bezel wrapper
+   ================================================================ */
+.frm { padding: 120px 0 140px; }
+.frm-wrap { max-width: 620px; margin: 0 auto; }
+
+.frm-card {
+  background: rgba(15,23,42,0.025);
+  border: 1px solid var(--border);
+  padding: 6px;
+  border-radius: var(--radius-shell);
+}
+.frm-inner {
+  background: var(--surface);
+  border-radius: calc(var(--radius-shell) - 6px);
+  padding: 40px;
+  box-shadow: inset 0 1px 1px rgba(255,255,255,0.5), var(--shadow-soft);
+}
+
+.frm-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.frm-group { margin-bottom: 18px; }
+.frm-group label { display: block; font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+
+.frm-group input,
+.frm-group textarea,
+.frm-group select {
+  width: 100%;
+  padding: 13px 16px;
+  background: var(--bg);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 15px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  outline: none;
+  -webkit-appearance: none;
+}
+.frm-group input:focus,
+.frm-group textarea:focus,
+.frm-group select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-surface);
+}
+.frm-group textarea { resize: vertical; min-height: 100px; }
+.frm-group select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%2394a3b8' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+  cursor: pointer;
+}
+
+.frm-file {
+  border: 2px dashed var(--border-strong);
+  border-radius: var(--radius-sm);
+  padding: 22px;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  transition: border-color 0.3s;
+}
+.frm-file:hover { border-color: var(--accent); }
+.frm-file input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+.frm-file span { font-size: 13px; color: var(--ink-tertiary); }
+
+.btn-form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 100px;
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.5s var(--ease-spring);
+  box-shadow: var(--accent-glow);
+  margin-top: 8px;
+}
+.btn-form:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 14px 50px -10px rgba(8,145,178,0.35); }
+.btn-form:active { transform: scale(0.98); }
+
+.frm-trust { display: flex; align-items: center; justify-content: center; gap: 18px; margin-top: 16px; flex-wrap: wrap; }
+.frm-trust span { display: flex; align-items: center; gap: 5px; font-size: 12px; color: var(--ink-tertiary); font-weight: 500; }
+.frm-trust svg { width: 14px; height: 14px; stroke: var(--accent); fill: none; stroke-width: 2; }
+
+/* ================================================================
+   CTA BAND
+   ================================================================ */
+.cta-end {
+  padding: 80px 0;
+  background: var(--ink);
+  text-align: center;
+  color: #fff;
+}
+.cta-end h2 { font-size: clamp(1.4rem, 2.8vw, 2.1rem); font-weight: 800; margin-bottom: 8px; letter-spacing: -0.02em; }
+.cta-end p { font-size: 16px; color: rgba(255,255,255,0.6); margin-bottom: 32px; }
+.cta-end .btn-main { background: var(--accent-light); color: var(--ink); font-size: 16px; padding: 10px 10px 10px 32px; }
+.cta-end .btn-main:hover { background: #fff; }
+.cta-end .btn-main .btn-arrow { background: rgba(15,23,42,0.1); }
+.cta-end .btn-main .btn-arrow svg { stroke: var(--ink); }
+
+/* ================================================================
+   FOOTER
+   ================================================================ */
+.foot { border-top: 1px solid var(--border); padding: 48px 0 28px; background: var(--surface); }
+.foot-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 36px; }
+
+.foot-brand { display: flex; align-items: center; gap: 8px; font-size: 20px; font-weight: 800; color: var(--accent-dark); margin-bottom: 12px; }
+.foot-brand img { width: 24px; height: 24px; object-fit: contain; mix-blend-mode: multiply; }
+.foot-desc { font-size: 14px; color: var(--ink-tertiary); line-height: 1.7; max-width: 300px; }
+
+.foot h4 { font-size: 11px; font-weight: 700; color: var(--ink); text-transform: uppercase; letter-spacing: 0.14em; margin-bottom: 14px; }
+.foot a { display: block; color: var(--ink-secondary); text-decoration: none; font-size: 14px; margin-bottom: 10px; transition: color 0.3s; }
+.foot a:hover { color: var(--accent-dark); }
+
+.foot-bottom { border-top: 1px solid var(--border); padding-top: 20px; display: flex; justify-content: space-between; font-size: 12px; color: var(--ink-ghost); }
+
+/* ================================================================
+   FLOATING CTA MOBILE
+   ================================================================ */
+.float-cta {
+  display: none;
+  position: fixed;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  z-index: 90;
+  padding: 16px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: var(--accent-glow);
+  transition: all 0.4s var(--ease-spring);
+}
+.float-cta:active { transform: scale(0.97); }
+
+/* ================================================================
+   MASCOTTE
+   ================================================================ */
+.mascot-wrap {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 80;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  pointer-events: none;
+}
+.mascot-bubble {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px 16px 4px 16px;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  max-width: 190px;
+  opacity: 0;
+  transform: translateY(8px) scale(0.92);
+  transition: all 0.5s var(--ease-spring);
+  pointer-events: auto;
+  box-shadow: var(--shadow-lifted);
+  line-height: 1.4;
+}
+.mascot-bubble.on { opacity: 1; transform: translateY(0) scale(1); }
+
+.mascot-fig {
+  width: 88px;
+  height: 88px;
+  position: relative;
+  cursor: pointer;
+  pointer-events: auto;
+  animation: m-float 3.5s ease-in-out infinite;
+  filter: drop-shadow(0 8px 16px rgba(8,145,178,0.18));
+  transition: transform 0.4s var(--ease-spring);
+}
+.mascot-fig:hover { transform: scale(1.1); animation-play-state: paused; }
+.mascot-fig:active { transform: scale(0.94); }
+
+.mascot-fig img {
+  width: 100%; height: 100%; object-fit: contain;
+  position: absolute; inset: 0;
+  transition: opacity 0.4s var(--ease-out);
+}
+.mascot-fig img.off { opacity: 0; }
+.mascot-fig img.on { opacity: 1; }
+
+@keyframes m-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+
+/* ================================================================
+   RESPONSIVE — aggressive mobile collapse
+   ================================================================ */
+@media (max-width: 768px) {
+  .wrap { padding: 0 20px; }
+  .nav-links, .nav-cta { display: none; }
+  .burger { display: flex; }
+  .nav { padding: 6px 14px; gap: 0; justify-content: space-between; width: calc(100% - 24px); }
+
+  .hero-title-line { font-size: clamp(2rem, 8vw, 3rem); }
+  .hero-cta-bar { gap: 10px; padding: 20px 16px 28px; flex-direction: column; align-items: stretch; }
+  .btn-main, .btn-ghost { justify-content: center; width: 100%; }
+  .hero-eyebrow-float { top: 20px; font-size: 10px; }
+  .proof-float-hero { bottom: 80px; right: 16px; padding: 10px 14px; }
+  .hero-scroll-hint { bottom: 24px; }
+  .hero-scroll-hint span { font-size: 11px; }
+
+  .trust-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+
+  .ba-gallery { height: 620px; }
+  .ba-photo { width: 200px; height: 200px; }
+  .ba-photo:hover { width: 260px !important; height: 260px !important; }
+
+  .svc-grid { grid-template-columns: 1fr; }
+  .svc-grid > * { grid-column: auto !important; }
+
+  .why-layout { grid-template-columns: 1fr; gap: 36px; }
+  .why-stats { position: static; }
+
+  .zone-box { grid-template-columns: 1fr; padding: 24px; }
+  .zone-map { height: 220px; }
+
+  .frm-row { grid-template-columns: 1fr; }
+  .frm-inner { padding: 24px; }
+
+  .foot-grid { grid-template-columns: 1fr; gap: 28px; }
+  .foot-bottom { flex-direction: column; gap: 4px; text-align: center; }
+
+  .float-cta { display: block; }
+  .mascot-wrap { bottom: 90px; right: 14px; }
+  .mascot-fig { width: 64px; height: 64px; }
+  .mascot-bubble { font-size: 12px; max-width: 155px; }
+  .sp-div { display: none; }
+
+  .ba, .svc, .why, .rev, .zone, .frm { padding: 80px 0; }
+}
+
+@media (max-width: 480px) {
+  .hero-title-line { font-size: clamp(1.6rem, 7vw, 2.4rem); }
+  .wrap { padding: 0 16px; }
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Shiny - Nettoyage Exterieur Haute Pression",
+  "description": "Nettoyage exterieur haute pression professionnel a Narbonne. Terrasses, facades, murs, allees. Devis gratuit, resultat garanti.",
+  "url": "https://shiny-nettoyage.fr",
+  "telephone": "+33604915773",
+  "email": "contact.shinynettoyage@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Narbonne",
+    "addressRegion": "Occitanie",
+    "addressCountry": "FR"
+  },
+  "areaServed": {
+    "@type": "AdministrativeArea",
+    "name": "Occitanie"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "1",
+    "bestRating": "5"
+  },
+  "priceRange": "Devis gratuit",
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+    "opens": "08:00",
+    "closes": "19:00"
+  }
+}
+</script>
+</head>
+<body>
+
+<!-- ==================== NAVBAR ==================== -->
+<nav class="nav" id="nav">
+  <a href="#" class="nav-logo">
+    <img src="images/pupu.png" alt="Shiny">
+    SHINY
+  </a>
+  <ul class="nav-links">
+    <li><a href="#resultats">Resultats</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#pourquoi">Pourquoi nous</a></li>
+    <li><a href="#avis">Avis</a></li>
+  </ul>
+  <a href="#devis" class="nav-cta">
+    Devis gratuit
+    <span class="cta-icon"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+  </a>
+  <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- Mobile overlay -->
+<div class="mobile-overlay" id="mobileMenu">
+  <a href="#resultats" onclick="toggleMenu()">Resultats</a>
+  <a href="#services" onclick="toggleMenu()">Services</a>
+  <a href="#pourquoi" onclick="toggleMenu()">Pourquoi nous</a>
+  <a href="#avis" onclick="toggleMenu()">Avis</a>
+  <a href="#devis" onclick="toggleMenu()" style="color:var(--accent)">Devis gratuit</a>
+</div>
+
+<!-- ==================== HERO — Scroll Expansion ==================== -->
+<section class="hero-expansion" id="hero">
+  <!-- Background image (visible initially, fades on scroll) -->
+  <div class="hero-bg" id="heroBg" style="background-image:url('images/sale.webp')"></div>
+
+  <!-- Expanding media — two layers: sale (bottom) + propre (top, revealed by scroll) -->
+  <div class="hero-media" id="heroMedia">
+    <img src="images/sale.webp" alt="Terrasse sale avant nettoyage" class="hero-img-sale">
+    <img src="images/propre.webp" alt="Terrasse propre apres nettoyage Shiny" class="hero-img-propre" id="heroImgPropre">
+    <div class="hero-media-overlay" id="heroOverlay"></div>
+  </div>
+
+  <!-- Title text that splits on scroll -->
+  <div class="hero-titles" id="heroTitles">
+    <div class="hero-title-line" id="heroLine1">Vous ne reconnaitrez plus</div>
+    <div class="hero-title-line" id="heroLine2">votre exterieur</div>
+  </div>
+
+  <!-- Eyebrow -->
+  <div class="hero-eyebrow-float"><span class="dot"></span> Narbonne et alentours</div>
+
+  <!-- Proof badge -->
+  <div class="proof-float-hero" id="heroProof">
+    <div>
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="proof-text">5/5 sur Google<span>Avis verifies</span></div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="hero-scroll-hint" id="heroScrollHint">
+    <span>Scrollez pour voir le resultat</span>
+    <div class="hero-scroll-arrow"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg></div>
+  </div>
+
+  <!-- CTA bar (appears after full expansion) -->
+  <div class="hero-cta-bar" id="heroCtaBar">
+    <a href="#devis" class="btn-main">
+      Demander mon devis gratuit
+      <span class="btn-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    </a>
+    <a href="tel:0604915773" class="btn-ghost">
+      <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      06 04 91 57 73
+    </a>
+  </div>
+</section>
+
+<!-- ==================== TRUST ==================== -->
+<section class="trust-strip">
+  <div class="wrap">
+    <div class="trust-grid stagger">
+      <div class="reveal"><span class="val">5/5 &#9733;</span><span class="lbl">Note Google verifiee</span></div>
+      <div class="reveal"><span class="val">0 &euro;</span><span class="lbl">Devis + deplacement gratuit</span></div>
+      <div class="reveal"><span class="val">Garanti</span><span class="lbl">Satisfait ou on revient</span></div>
+      <div class="reveal"><span class="val">&lt; 48h</span><span class="lbl">Reponse rapide</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== AVANT / APRES ==================== -->
+<section class="ba" id="resultats">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-tag">Avant / Apres</div>
+      <h2>Le resultat parle<br>de lui-meme</h2>
+      <p>Pas de retouche photo, pas de filtre. Juste un nettoyage professionnel. Voyez la difference par vous-meme.</p>
+    </div>
+    <div class="ba-gallery reveal" id="baGallery">
+      <div class="ba-photo" data-x="-300" data-y="15" data-rot="-3" style="z-index:30">
+        <img src="images/avant-apres-3.webp" alt="Avant apres nettoyage" draggable="false">
+      </div>
+      <div class="ba-photo" data-x="0" data-y="-10" data-rot="2" style="z-index:20">
+        <img src="images/avant-apres-1.webp" alt="Avant apres nettoyage" draggable="false">
+      </div>
+      <div class="ba-photo" data-x="300" data-y="20" data-rot="-2" style="z-index:10">
+        <img src="images/avant-apres-2.webp" alt="Avant apres nettoyage" draggable="false">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SERVICES ==================== -->
+<section class="svc" id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-tag">Nos services</div>
+      <h2>Ce qu'on fait<br>pour vous</h2>
+      <p>Terrasses, facades, murs, allees — on s'occupe de tous vos exterieurs. Voici nos prestations.</p>
+    </div>
+    <div class="svc-grid stagger">
+      <div class="svc-card reveal">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
+        <h3>Terrasses</h3>
+        <p>Carrelage, dalles, bois, pierre naturelle. Votre terrasse retrouve son aspect neuf, debarrassee des mousses et salissures incrustees.</p>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="14" rx="1"/><line x1="2" y1="10" x2="22" y2="10"/><line x1="7" y1="6" x2="7" y2="3"/><line x1="17" y1="6" x2="17" y2="3"/></svg></div>
+        <h3>Facades</h3>
+        <p>Crepi, enduit, pierre. Votre facade retrouve ses couleurs d'origine.</p>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg></div>
+        <h3>Murs et clotures</h3>
+        <p>Traces noires, mousse, salissures incrustees : on elimine tout.</p>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><line x1="9" y1="21" x2="9" y2="14"/><line x1="15" y1="21" x2="15" y2="14"/></svg></div>
+        <h3>Allees et entrees</h3>
+        <p>Pave, beton, gravier stabilise. Vos allees redeviennent propres et accueillantes pour vos visiteurs.</p>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 2C12 2 5 9 5 14a7 7 0 0014 0c0-5-7-12-7-12z"/></svg></div>
+        <h3>Denoircissement</h3>
+        <p>Traitement profond des surfaces noircies par le temps et l'humidite.</p>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <h3>Avant-vente immobiliere</h3>
+        <p>Valorisez votre bien. Un exterieur propre change tout pour les acheteurs potentiels.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ==================== POURQUOI SHINY ==================== -->
+<section class="why" id="pourquoi">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-tag">Pourquoi Shiny</div>
+      <h2>On ne promet pas,<br>on garantit le resultat</h2>
+    </div>
+    <div class="why-layout">
+      <div class="why-list stagger">
+        <div class="why-item reveal">
+          <div class="why-ico"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+          <div>
+            <h3>Resultat garanti</h3>
+            <p>Si le resultat ne vous convient pas, on revient gratuitement corriger. Sans discussion, sans frais supplementaires.</p>
+          </div>
+        </div>
+        <div class="why-item reveal">
+          <div class="why-ico"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div>
+            <h3>Garantie satisfaction</h3>
+            <p>Chaque chantier est traite avec le meme soin et la meme exigence. Votre satisfaction passe avant tout.</p>
+          </div>
+        </div>
+        <div class="why-item reveal">
+          <div class="why-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div>
+            <h3>Devis gratuit et rapide</h3>
+            <p>Deplacement gratuit pour evaluer vos besoins. Devis clair, detaille, sans surprise et sans engagement.</p>
+          </div>
+        </div>
+        <div class="why-item reveal">
+          <div class="why-ico"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div>
+            <h3>100% local</h3>
+            <p>Basee a Narbonne, on intervient pres de chez vous. Proximite, reactivite, confiance.</p>
+          </div>
+        </div>
+      </div>
+      <div class="why-stats reveal" style="transition-delay:200ms">
+        <div class="stat-block">
+          <div class="big">5.0</div>
+          <div class="sub">Note moyenne Google</div>
+        </div>
+        <div class="stat-block">
+          <div class="big">100%</div>
+          <div class="sub">Satisfaction client</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== AVIS ==================== -->
+<section class="rev" id="avis">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-tag">Avis clients</div>
+      <h2>Ce que disent nos<br>clients satisfaits</h2>
+    </div>
+    <div class="reveal">
+      <div class="rev-card">
+        <div class="rev-stars">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="rev-text">"A tres bien nettoyer ma maison. Je recommande &#128077;"</p>
+        <p class="rev-author"><strong>Avis Google verifie</strong></p>
+      </div>
+      <a href="https://www.google.com/search?q=shiny+nettoyage+haute+pression+narbonne" target="_blank" rel="noopener" class="g-badge" style="text-decoration:none;cursor:pointer;">
+        <span class="g-num">5.0</span>
+        <span class="g-info"><strong>Avis Google verifie</strong>Consultez nos avis sur Google &rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ZONE ==================== -->
+<section class="zone" id="zone">
+  <div class="wrap">
+    <div class="zone-box reveal">
+      <div>
+        <h3>Zone d'intervention</h3>
+        <p>Nous intervenons dans toute la region Occitanie pour vos projets de nettoyage exterieur.</p>
+        <div class="zone-pills">
+          <span class="zone-pill">Narbonne</span>
+          <span class="zone-pill">Beziers</span>
+          <span class="zone-pill">Perpignan</span>
+          <span class="zone-pill">Carcassonne</span>
+          <span class="zone-pill">Montpellier</span>
+          <span class="zone-pill">Toulouse</span>
+          <span class="zone-pill">Nimes</span>
+          <span class="zone-pill">Sete</span>
+          <span class="zone-pill">Albi</span>
+          <span class="zone-pill">Tarbes</span>
+        </div>
+      </div>
+      <div class="zone-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1500000!2d2.3!3d43.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b6af0725dd1db1%3A0x5765bbab764be75b!2sOccitanie!5e0!3m2!1sfr!2sfr!4v1" allowfullscreen loading="lazy" title="Occitanie"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FORMULAIRE ==================== -->
+<section class="frm" id="devis">
+  <div class="wrap">
+    <div class="frm-wrap">
+      <div class="sec-head reveal" style="text-align:center;max-width:100%;margin-left:auto;margin-right:auto;">
+        <div class="sec-tag">Devis gratuit</div>
+        <h2>Votre devis gratuit<br>en 2 minutes</h2>
+        <p style="margin-left:auto;margin-right:auto;">Remplissez le formulaire, on vous rappelle sous 48h avec un devis detaille. 0 &euro;, 0 engagement.</p>
+      </div>
+      <div class="frm-card reveal">
+        <div class="frm-inner">
+          <form id="devisForm" action="https://formspree.io/f/mbdpbpgw" method="POST">
+            <div class="frm-row">
+              <div class="frm-group">
+                <label for="nom">Nom complet</label>
+                <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+              </div>
+              <div class="frm-group">
+                <label for="tel">Telephone</label>
+                <input type="tel" id="tel" name="telephone" placeholder="06 XX XX XX XX" required>
+              </div>
+            </div>
+            <div class="frm-group">
+              <label for="mail">Email</label>
+              <input type="email" id="mail" name="email" placeholder="votre@email.com" required>
+            </div>
+            <div class="frm-group">
+              <label for="prestation">Type de prestation</label>
+              <select id="prestation" name="prestation" required>
+                <option value="" disabled selected>Choisissez une prestation</option>
+                <option value="terrasse">Nettoyage terrasse</option>
+                <option value="facade">Nettoyage facade</option>
+                <option value="mur">Nettoyage mur / cloture</option>
+                <option value="allee">Nettoyage allee / entree</option>
+                <option value="denoircissement">Denoircissement</option>
+                <option value="avant-vente">Nettoyage avant-vente</option>
+                <option value="autre">Autre</option>
+              </select>
+            </div>
+            <div class="frm-group">
+              <label for="msg">Message</label>
+              <textarea id="msg" name="message" placeholder="Decrivez votre projet : type de surface, etat actuel, surface approximative..."></textarea>
+            </div>
+            <button type="submit" class="btn-form" id="btnSubmit">Recevoir mon devis gratuit &rarr;</button>
+            <div class="frm-trust">
+              <span><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Gratuit</span>
+              <span><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Sans engagement</span>
+              <span><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Reponse rapide</span>
+            </div>
+          </form>
+          <div id="formSuccess" style="display:none;text-align:center;padding:48px 24px;">
+            <div style="width:64px;height:64px;margin:0 auto 20px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;">
+              <svg viewBox="0 0 24 24" style="width:32px;height:32px;stroke:#fff;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h3 style="font-size:24px;font-weight:700;margin-bottom:8px;">Demande envoyee !</h3>
+            <p style="color:var(--ink-secondary);font-size:15px;max-width:360px;margin:0 auto;">Merci ! Nous avons bien recu votre demande de devis. Nous vous recontactons sous 48h.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CTA END ==================== -->
+<section class="cta-end">
+  <div class="wrap reveal">
+    <h2>Votre exterieur merite mieux que ca, non ?</h2>
+    <p>Devis gratuit en 48h. Resultat garanti ou on revient. Narbonne et alentours.</p>
+    <a href="#devis" class="btn-main">
+      Demander mon devis gratuit
+      <span class="btn-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    </a>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <img src="images/pupu.png" alt="Shiny">
+          Shiny
+        </div>
+        <p class="foot-desc">Nettoyage exterieur haute pression a Narbonne et alentours. Redonner de l'eclat a vos surfaces, c'est notre metier.</p>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <a href="#resultats">Resultats</a>
+        <a href="#services">Services</a>
+        <a href="#pourquoi">Pourquoi nous</a>
+        <a href="#avis">Avis clients</a>
+        <a href="#devis">Devis gratuit</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="tel:0604915773">06 04 91 57 73</a>
+        <a href="mailto:contact.shinynettoyage@gmail.com">contact.shinynettoyage@gmail.com</a>
+        <a href="https://www.facebook.com/profile.php?id=61576666545943" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>2025 Shiny. Tous droits reserves. SIRET 953276136000333</span>
+      <span>Narbonne, France</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ==================== MASCOTTE ==================== -->
+<div class="mascot-wrap" id="mascotWrap">
+  <div class="mascot-bubble" id="mBubble"></div>
+  <div class="mascot-fig" id="mFig">
+    <img src="images/mascotte-idle.png" alt="" class="on" id="mIdle">
+    <img src="images/mascotte-coucou.png" alt="" class="off" id="mWave">
+    <img src="images/mascotte-eponge.png" alt="" class="off" id="mSponge">
+  </div>
+</div>
+
+<!-- Floating CTA mobile -->
+<a href="#devis" class="float-cta" id="floatCta">&#9733; Devis gratuit en 2 min</a>
+
+<!-- ==================== JAVASCRIPT ==================== -->
+<script>
+/* ================================================================
+   SCROLL EXPANSION HERO — Vanilla JS adaptation
+   Image starts small centered, expands to fullscreen on scroll
+   ================================================================ */
+(function(){
+  var heroMedia = document.getElementById('heroMedia');
+  var heroBg = document.getElementById('heroBg');
+  var heroOverlay = document.getElementById('heroOverlay');
+  var heroImgPropre = document.getElementById('heroImgPropre');
+  var heroLine1 = document.getElementById('heroLine1');
+  var heroLine2 = document.getElementById('heroLine2');
+  var heroTitles = document.getElementById('heroTitles');
+  var heroScrollHint = document.getElementById('heroScrollHint');
+  var heroCtaBar = document.getElementById('heroCtaBar');
+  var heroProof = document.getElementById('heroProof');
+  var heroSection = document.getElementById('hero');
+
+  var scrollProgress = 0;
+  var mediaFullyExpanded = false;
+  var touchStartY = 0;
+  var isMobile = window.innerWidth < 768;
+
+  window.addEventListener('resize', function(){ isMobile = window.innerWidth < 768; });
+
+  function applyProgress(p){
+    /* Clamp */
+    p = Math.min(Math.max(p, 0), 1);
+    scrollProgress = p;
+
+    /* Media size: starts small, grows to viewport */
+    var startW = isMobile ? 280 : 340;
+    var startH = isMobile ? 380 : 440;
+    var maxW = window.innerWidth;
+    var maxH = window.innerHeight;
+    var w = startW + p * (maxW - startW);
+    var h = startH + p * (maxH - startH);
+
+    heroMedia.style.width = w + 'px';
+    heroMedia.style.height = h + 'px';
+    heroMedia.style.maxWidth = '100vw';
+    heroMedia.style.maxHeight = '100vh';
+
+    /* Border radius: round -> square */
+    var rad = Math.max(0, 24 * (1 - p));
+    heroMedia.style.borderRadius = rad + 'px';
+
+    /* Background fades out */
+    heroBg.style.opacity = Math.max(0, 1 - p * 1.5);
+
+    /* Overlay on media fades */
+    heroOverlay.style.opacity = Math.max(0, 0.4 - p * 0.35);
+
+    /* Reveal propre image: clip from bottom to top as scroll progresses */
+    var reveal = Math.min(1, Math.max(0, (p - 0.15) / 0.7));
+    heroImgPropre.style.clipPath = 'inset(' + (100 - reveal * 100) + '% 0 0 0)';
+
+    /* Title text splits apart */
+    var tx = p * (isMobile ? 120 : 100);
+    heroLine1.style.transform = 'translateX(-' + tx + 'vw)';
+    heroLine2.style.transform = 'translateX(' + tx + 'vw)';
+
+    /* Scroll hint fades */
+    heroScrollHint.style.opacity = Math.max(0, 1 - p * 3);
+
+    /* CTA bar appears at end */
+    if(p >= 0.85){
+      heroCtaBar.classList.add('visible');
+      heroProof.classList.add('visible');
+    } else {
+      heroCtaBar.classList.remove('visible');
+      heroProof.classList.remove('visible');
+    }
+
+    /* Full expansion state */
+    if(p >= 1 && !mediaFullyExpanded){
+      mediaFullyExpanded = true;
+      heroMedia.classList.add('full');
+      document.body.style.overflow = '';
+    } else if(p < 1 && mediaFullyExpanded){
+      mediaFullyExpanded = false;
+      heroMedia.classList.remove('full');
+    }
+  }
+
+  /* Wheel handler */
+  function onWheel(e){
+    if(mediaFullyExpanded){
+      /* Allow scroll back up when at top of page */
+      if(e.deltaY < 0 && window.scrollY <= 5){
+        mediaFullyExpanded = false;
+        document.body.style.overflow = '';
+        e.preventDefault();
+        applyProgress(0.98);
+      }
+      return;
+    }
+    e.preventDefault();
+    var delta = e.deltaY * 0.0012;
+    applyProgress(scrollProgress + delta);
+  }
+
+  /* Touch handlers */
+  function onTouchStart(e){
+    touchStartY = e.touches[0].clientY;
+  }
+  function onTouchMove(e){
+    if(!touchStartY) return;
+    var touchY = e.touches[0].clientY;
+    var deltaY = touchStartY - touchY;
+
+    if(mediaFullyExpanded){
+      if(deltaY < -20 && window.scrollY <= 5){
+        mediaFullyExpanded = false;
+        e.preventDefault();
+        applyProgress(0.98);
+      }
+      return;
+    }
+    e.preventDefault();
+    var factor = deltaY < 0 ? 0.008 : 0.005;
+    applyProgress(scrollProgress + deltaY * factor);
+    touchStartY = touchY;
+  }
+  function onTouchEnd(){ touchStartY = 0; }
+
+  /* Lock scroll while expanding */
+  function onScroll(){
+    if(!mediaFullyExpanded){ window.scrollTo(0, 0); }
+  }
+
+  window.addEventListener('wheel', onWheel, { passive: false });
+  window.addEventListener('scroll', onScroll);
+  window.addEventListener('touchstart', onTouchStart, { passive: false });
+  window.addEventListener('touchmove', onTouchMove, { passive: false });
+  window.addEventListener('touchend', onTouchEnd);
+
+  /* Initial state */
+  applyProgress(0);
+})();
+
+/* Scroll reveal with IntersectionObserver (no window.scroll listener) */
+var io = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+/* Navbar scroll state — single passive listener */
+var nav = document.getElementById('nav');
+window.addEventListener('scroll', function(){
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
+
+/* Hamburger */
+var burger = document.getElementById('burger');
+var mMenu = document.getElementById('mobileMenu');
+function toggleMenu(){
+  burger.classList.toggle('open');
+  mMenu.classList.toggle('open');
+  document.body.style.overflow = mMenu.classList.contains('open') ? 'hidden' : '';
+}
+burger.addEventListener('click', toggleMenu);
+
+/* Form AJAX submit + confirmation */
+var devisForm = document.getElementById('devisForm');
+var formSuccess = document.getElementById('formSuccess');
+var btnSubmit = document.getElementById('btnSubmit');
+devisForm.addEventListener('submit', function(e){
+  e.preventDefault();
+  btnSubmit.disabled = true;
+  btnSubmit.textContent = 'Envoi en cours...';
+  var data = new FormData(devisForm);
+  fetch(devisForm.action, {
+    method: 'POST',
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  }).then(function(res){
+    if(res.ok){
+      devisForm.style.display = 'none';
+      formSuccess.style.display = 'block';
+    } else {
+      btnSubmit.disabled = false;
+      btnSubmit.innerHTML = 'Recevoir mon devis gratuit &rarr;';
+      alert('Erreur lors de l\'envoi. Veuillez reessayer.');
+    }
+  }).catch(function(){
+    btnSubmit.disabled = false;
+    btnSubmit.innerHTML = 'Recevoir mon devis gratuit &rarr;';
+    alert('Erreur de connexion. Veuillez reessayer.');
+  });
+});
+
+/* Float CTA hide when form visible */
+var fCta = document.getElementById('floatCta');
+var frmEl = document.getElementById('devis');
+new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    fCta.style.opacity = e.isIntersecting ? '0' : '1';
+    fCta.style.pointerEvents = e.isIntersecting ? 'none' : 'auto';
+    fCta.style.transform = e.isIntersecting ? 'translateY(20px)' : 'translateY(0)';
+  });
+}, { threshold: 0.1 }).observe(frmEl);
+
+/* Mascotte contextuelle — corner only */
+var mBubble = document.getElementById('mBubble');
+var mIdle = document.getElementById('mIdle');
+var mWave = document.getElementById('mWave');
+var mSponge = document.getElementById('mSponge');
+var mFig = document.getElementById('mFig');
+var curSec = '';
+
+var mData = {
+  hero:     { pose:'wave', msg:'Bienvenue chez Shiny !' },
+  resultats:{ pose:'sponge', msg:'Regardez la difference !' },
+  services: { pose:'sponge', msg:'On nettoie tout type de surface !' },
+  pourquoi: { pose:'idle', msg:'Resultat garanti !' },
+  avis:     { pose:'wave', msg:'Nos clients nous adorent !' },
+  zone:     { pose:'idle', msg:'On intervient pres de chez vous !' },
+  devis:    { pose:'wave', msg:'C\'est gratuit, lancez-vous !' }
+};
+
+function setPose(p){
+  mIdle.className = p === 'idle' ? 'on' : 'off';
+  mWave.className = p === 'wave' ? 'on' : 'off';
+  mSponge.className = p === 'sponge' ? 'on' : 'off';
+}
+function showBub(t){ mBubble.textContent = t; mBubble.classList.add('on'); }
+function hideBub(){ mBubble.classList.remove('on'); }
+
+['hero','resultats','services','pourquoi','avis','zone','devis'].forEach(function(id){
+  var el = document.getElementById(id);
+  if(!el) return;
+  new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting && curSec !== id){
+        curSec = id;
+        var d = mData[id];
+        if(d){ setPose(d.pose); showBub(d.msg); setTimeout(hideBub, 3500); }
+      }
+    });
+  }, { threshold: 0.25 }).observe(el);
+});
+
+var clicks = 0;
+var funMsg = ['On va faire briller ca !','Votre terrasse le merite !','C\'est gratuit, foncez !','Mousse et crasse, dehors !','Le propre c\'est mon job !'];
+mFig.addEventListener('click', function(){
+  clicks++;
+  showBub(funMsg[clicks % funMsg.length]);
+  setTimeout(hideBub, 3000);
+});
+
+setPose('wave');
+setTimeout(function(){ showBub('Bienvenue chez Shiny !'); setTimeout(hideBub, 4000); }, 1200);
+
+/* Photo Gallery — scatter animation + drag */
+(function(){
+  var gallery = document.getElementById('baGallery');
+  if(!gallery) return;
+  var photos = gallery.querySelectorAll('.ba-photo');
+  var isMob = window.innerWidth < 768;
+
+  /* Mobile positions: vertical stack with slight x offsets */
+  var mobilePositions = [
+    { x: -30, y: -190, rot: -3 },
+    { x: 20,  y: 0,    rot: 2 },
+    { x: -15, y: 190,  rot: -2 }
+  ];
+
+  function getPos(p, i){
+    if(isMob){
+      return mobilePositions[i] || { x:0, y:0, rot:0 };
+    }
+    return {
+      x: parseInt(p.dataset.x),
+      y: parseInt(p.dataset.y),
+      rot: parseInt(p.dataset.rot)
+    };
+  }
+
+  /* Scatter photos to their positions on reveal */
+  var scattered = false;
+  new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting && !scattered){
+        scattered = true;
+        photos.forEach(function(p, i){
+          var pos = getPos(p, i);
+          setTimeout(function(){
+            p.style.transform = 'translate(' + pos.x + 'px,' + pos.y + 'px) rotate(' + pos.rot + 'deg)';
+            p.style.opacity = '1';
+          }, i * 150 + 100);
+        });
+      }
+    });
+  }, { threshold: 0.15 }).observe(gallery);
+
+  /* Initial state: all stacked in center, hidden */
+  photos.forEach(function(p){
+    p.style.transform = 'translate(0,0) rotate(0deg)';
+    p.style.opacity = '0';
+    p.style.transition = 'transform 0.8s cubic-bezier(0.16,1,0.3,1), opacity 0.6s ease, box-shadow 0.5s ease, width 0.5s cubic-bezier(0.16,1,0.3,1), height 0.5s cubic-bezier(0.16,1,0.3,1)';
+  });
+
+  /* Drag behavior */
+  photos.forEach(function(p, idx){
+    var startX, startY, origX, origY, dragging = false;
+    var pos = getPos(p, idx);
+    var baseX = pos.x;
+    var baseY = pos.y;
+    var rot = pos.rot;
+    var dx = 0, dy = 0;
+
+    function onDown(ex, ey){
+      dragging = true;
+      startX = ex; startY = ey;
+      origX = dx; origY = dy;
+      p.style.transition = 'box-shadow 0.3s ease';
+      p.style.zIndex = '100';
+    }
+    function onMove(ex, ey){
+      if(!dragging) return;
+      dx = origX + (ex - startX);
+      dy = origY + (ey - startY);
+      p.style.transform = 'translate(' + (baseX + dx) + 'px,' + (baseY + dy) + 'px) rotate(' + rot + 'deg) scale(1.05)';
+    }
+    function onUp(){
+      if(!dragging) return;
+      dragging = false;
+      dx = 0; dy = 0;
+      p.style.transition = 'transform 0.8s cubic-bezier(0.16,1,0.3,1), box-shadow 0.5s ease, width 0.5s cubic-bezier(0.16,1,0.3,1), height 0.5s cubic-bezier(0.16,1,0.3,1)';
+      p.style.transform = 'translate(' + baseX + 'px,' + baseY + 'px) rotate(' + rot + 'deg)';
+    }
+
+    p.addEventListener('mousedown', function(e){ e.preventDefault(); onDown(e.clientX, e.clientY); });
+    window.addEventListener('mousemove', function(e){ onMove(e.clientX, e.clientY); });
+    window.addEventListener('mouseup', onUp);
+    p.addEventListener('touchstart', function(e){ onDown(e.touches[0].clientX, e.touches[0].clientY); }, {passive:true});
+    window.addEventListener('touchmove', function(e){ if(dragging) onMove(e.touches[0].clientX, e.touches[0].clientY); }, {passive:true});
+    window.addEventListener('touchend', onUp);
+  });
+})();
+
+/* Smooth scroll */
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click', function(e){
+    var t = document.querySelector(this.getAttribute('href'));
+    if(t){ e.preventDefault(); t.scrollIntoView({ behavior:'smooth', block:'start' }); }
+  });
+});
+</script>
+</body>
+</html>
